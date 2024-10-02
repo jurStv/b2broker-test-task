@@ -1,0 +1,15 @@
+@import 'variables';
+
+:host {
+  display: flex;
+  height: auto;
+  max-height: 100%;
+  flex-direction: column;
+
+  border: 1px solid $border-color;
+
+  background-color: $content-bg-color;
+
+  overflow: hidden;
+  box-shadow: rgba(49, 49, 90, 0.3) 0 11px 26px -4px, rgba(1, 1, 1, 0.25) 0 5px 17px -7px;
+}

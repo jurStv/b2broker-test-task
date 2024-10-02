@@ -1,0 +1,50 @@
+<form [formGroup]="settingsGroup" class="settings-form">
+  <div class="settings-form-field">
+    <label class="settings-form-field__label" for="socketInterval">
+      {{ 'settingsGroup.socketInterval.label' | transloco }}
+    </label>
+    <input
+      class="settings-form-field__input"
+      formControlName="socketInterval"
+      id="socketInterval"
+      type="number">
+    <div class="settings-form-field__validation">
+      <div *ngFor="let translationKey of (socketIntervalControlErrors | defaultTo: {} | keys)" class="settings-form-field__validation-message">
+        {{ translationKey | transloco }}
+      </div>
+    </div>
+  </div>
+  <div class="settings-form-field">
+    <label class="settings-form-field__label" for="pageSize">
+      {{ 'settingsGroup.pageSize.label' | transloco }}
+    </label>
+    <input
+      formControlName="pageSize"
+      class="settings-form-field__input"
+      id="pageSize"
+      type="number">
+      <div class="settings-form-field__validation">
+        <div *ngFor="let translationKey of (pageSizeControlErrors | defaultTo: {} | keys)" class="settings-form-field__validation-message">
+          {{ translationKey | transloco }}
+        </div>
+      </div>
+  </div>
+
+  <div class="settings-form-field">
+    <label class="settings-form-field__label" for="dataItemIdsInput">
+      {{ 'settingsGroup.dataItemIds.label' | transloco }}
+    </label>
+    <input
+      placeholder="john1, doe2"
+      formControlName="dataItemIds"
+      class="control-panel-form__field-input"
+      id="dataItemIdsInput"
+      type="text"
+    >
+    <div class="csettings-form-field__validation">
+      <div *ngFor="let translationKey of (dataItemIdsControlErrors | defaultTo: {} | keys)" class="settings-form-field__validation-message">
+        {{ translationKey | transloco }}
+      </div>
+    </div>
+  </div>
+</form>

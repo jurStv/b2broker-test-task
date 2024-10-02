@@ -1,0 +1,50 @@
+@import 'variables';
+
+$panel-padding: 1rem;
+
+:host {
+  display: block;
+}
+
+.settings-form {
+  display: flex;
+  gap: 1rem;
+  padding: $panel-padding;
+  justify-content: space-between;
+  border-bottom: 1px solid $border-color;
+
+  &-field {
+    display: flex;
+    flex-direction: column;
+    height: $input-height;
+    width: $input-width;
+
+    &__label {
+      color: $label-color;
+      font-size: .8rem;
+      margin-bottom: .25rem;
+    }
+
+    &__input {
+      border: 1px solid $input-border-color;
+      padding: .5rem;
+      font-size: .9rem;
+      text-align: center;
+
+      &:focus {
+        outline: none;
+        border-color: $input-focus-border-color;
+      }
+
+      &.ng-dirty.ng-invalid {
+        border-color: $invalid-color;
+      }
+    }
+
+    &__validation-message {
+      color: $invalid-color;
+      font-size: .7rem;
+      margin-top: .25rem;
+    }
+  }
+}

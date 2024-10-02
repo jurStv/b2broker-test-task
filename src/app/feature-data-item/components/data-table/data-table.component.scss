@@ -1,0 +1,70 @@
+@import 'variables';
+
+$table-padding: 1rem;
+$table-cell-padding: 1rem;
+$table-child-column-width: 35%;
+$table-head-height: 3rem;
+$table-row-outline: 1px solid $border-color;
+$table-row-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+
+:host {
+  display: block;
+  padding: 0 $table-padding $table-padding;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.data-table {
+  $self: &;
+
+  width: 100%;
+  table-layout: fixed;
+
+  &--child {
+    outline: $table-row-outline;
+    box-shadow: $table-row-shadow;
+
+    #{$self}__row {
+      outline: none;
+      box-shadow: none;
+    }
+
+    #{$self}__header-row {
+      position: static;
+      box-shadow: none;
+    }
+  }
+
+  &__column:nth-child(5) {
+    width: $table-child-column-width;
+  }
+
+  &__row {
+    outline: $table-row-outline;
+    box-shadow: $table-row-shadow;
+  }
+
+  &__row-spacer {
+    outline: none;
+    height: 1rem;
+  }
+
+  &__body {
+    overflow-y: auto;
+  }
+
+  &__header-row {
+    position: sticky;
+    background: #fff;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 20px -20px, rgb(255 255 255) -20px 0 0 0, rgba(255, 255, 255) 20px 0 0 0;
+  }
+
+  &__header-cell,
+  &__cell {
+    padding: $table-cell-padding;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

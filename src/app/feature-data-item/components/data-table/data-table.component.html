@@ -1,0 +1,53 @@
+<table class="data-table">
+  <colgroup class="data-table__column-group">
+    <col class="data-table__column">
+    <col class="data-table__column">
+    <col class="data-table__column">
+    <col class="data-table__column">
+    <col class="data-table__column">
+  </colgroup>
+  <thead class="data-table__head">
+    <tr class="data-table__header-row">
+      <th class="data-table__header-cell">{{ 'dataTable.column.id' | transloco }}</th>
+      <th class="data-table__header-cell">{{ 'dataTable.column.int' | transloco }}</th>
+      <th class="data-table__header-cell">{{ 'dataTable.column.float' | transloco }}</th>
+      <th class="data-table__header-cell">{{ 'dataTable.column.color' | transloco }}</th>
+      <th class="data-table__header-cell">{{ 'dataTable.column.child' | transloco }}</th>
+    </tr>
+  </thead>
+  <tbody class="data-table__body">
+    <ng-container *ngFor="let item of dataItems; trackBy: trackByFn; last as isLast;">
+      <tr class="data-table__row">
+        <td class="data-table__cell">{{ item.id }}</td>
+        <td class="data-table__cell">{{ item.int }}</td>
+        <td class="data-table__cell" [title]="item.float">
+          {{ item.float }}
+        </td>
+        <td class="data-table__cell">
+          <span [style.background-color]="item.color">{{ item.color }}</span>
+        </td>
+        <td class="data-table__cell">
+          <table class="data-table data-table--child">
+            <thead class="data-table__head">
+            <tr class="data-table__header-row">
+              <th class="data-table__header-cell">{{ 'dataTable.column.id' | transloco }}</th>
+              <th class="data-table__header-cell">{{ 'dataTable.column.color' | transloco }}</th>
+            </tr>
+            </thead>
+            <tbody class="data-table__body">
+            <tr class="data-table__row">
+              <td class="data-table__cell">
+                {{ item.child.id }}
+              </td>
+              <td class="data-table__cell">
+                <span [style.background-color]="item.child.color">{{ item.child.color }}</span>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr *ngIf="!isLast" class="data-table__row-spacer"></tr>
+    </ng-container>
+  </tbody>
+</table>

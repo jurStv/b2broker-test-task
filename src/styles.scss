@@ -1,0 +1,23 @@
+@import 'variables';
+
+/* General Layout */
+
+html,
+html * {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  padding: 1rem;
+  background: $background-color;
+  height: 100vh;
+    /* box-sizing: border-box; */
+    margin: 0;
+}

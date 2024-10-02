@@ -1,0 +1,30 @@
+{
+  "settingsGroup": {
+    "socketInterval": {
+      "label": "Socket Interval, ms"
+    },
+    "pageSize": {
+      "label": "Page Size"
+    },
+    "dataItemIds": {
+      "label": "Data Item Ids",
+      "validationMessage": {
+        "pattern": "Please, provide words separated by comma"
+      }
+    }
+  },
+  "dataTable": {
+    "column": {
+      "id": "ID",
+      "int": "Int",
+      "float": "Float",
+      "color": "Color",
+      "child": "Child"
+    }
+  },
+  "shared": {
+    "validationMessage": {
+      "required": "Required"
+    }
+  }
+}

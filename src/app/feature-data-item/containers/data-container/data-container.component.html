@@ -1,0 +1,6 @@
+<app-settings-control-group
+  (socketIntervalChange)="onSocketIntervalChange($event)"
+  (pageSizeChange)="onPageSizeChange($event)"
+  (dataItemIdsChange)="onUpdateDataItemIds($event)"
+></app-settings-control-group>
+<app-data-table [data]="(dataItem$ | async) | defaultTo: []"></app-data-table>
